@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 8e09b59eb87144e789903dc127f9c404
+timeCreated: 1487621795
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - rend: {instanceID: 0}
+  - text1: {fileID: 2800000, guid: 0bae467d659804b71b504a2d3542bf63, type: 3}
+  - text2: {fileID: 2800000, guid: 53f14ab5a4b854d12adbc69a38db1a7f, type: 3}
+  - text3: {fileID: 2800000, guid: ee9bcff33d7994a6da42af01c707d077, type: 3}
+  - text4: {fileID: 2800000, guid: a963b41818c834e468336d042fdb1f6e, type: 3}
+  - text5: {fileID: 2800000, guid: 13a83852534ff41ab86fe34f34743300, type: 3}
+  - randomTexture: {fileID: 2800000, guid: 13a83852534ff41ab86fe34f34743300, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
