@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Leap;
 
 public class ChangeTexture : MonoBehaviour {
 	public float scrollSpeed = 0.5F;
@@ -32,27 +33,63 @@ public class ChangeTexture : MonoBehaviour {
 
 	void OnMouseDown () {
 		print ("Box Clicked!");
-		count++;
-		isClick = true;
-		currentTexture = rend.material.mainTexture;
-		//int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
-		//int randomNumber2 = 2; //Random.Range (0, temptexArray.Length - 2);
-		//int randomNumber3 = 1;
-		if (count == 1)
-			gt1currentTexture = getCurrentTexture();
-		if (count == 2)
-			gt2currentTexture = getCurrentTexture();
-		if (count == 3) {
-			gt3currentTexture = getCurrentTexture();
-			//if (count == 3)
-			//WaitForSeconds();
-			//callerself();
-			//printMessage ();
-			randomizeTextures ();
-		}
+		//count++;
+		//isClick = true;
+		//currentTexture = rend.material.mainTexture;
+		////int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
+		////int randomNumber2 = 2; //Random.Range (0, temptexArray.Length - 2);
+		////int randomNumber3 = 1;
+		//if (count == 1)
+		//	gt1currentTexture = getCurrentTexture();
+		//if (count == 2)
+		//	gt2currentTexture = getCurrentTexture();
+		//if (count == 3) {
+		//	gt3currentTexture = getCurrentTexture();
+		//	//if (count == 3)
+		//	//WaitForSeconds();
+		//	//callerself();
+		//	//printMessage ();
+		//	randomizeTextures ();
+		//}
 	}
 
-	void callerself(){
+    //private bool IsHand(Collider other)
+    //{
+    //    if (other.transform.parent && other.transform.parent.parent && other.transform.parent.parent.GetComponent<Hand.Equals()> ())
+    //        return true;
+    //    else
+    //        return false;
+    //}
+
+    void OnTriggerExit(Collider other)
+    {
+        //if (IsHand(other))
+        //{
+        //    Debug.Log("Yay! A hand collided!");
+        //}
+        Debug.Log("Yay! A hand collided!");
+        count++;
+        isClick = true;
+        currentTexture = rend.material.mainTexture;
+        //int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
+        //int randomNumber2 = 2; //Random.Range (0, temptexArray.Length - 2);
+        //int randomNumber3 = 1;
+        if (count == 1)
+            gt1currentTexture = getCurrentTexture();
+        if (count == 2)
+            gt2currentTexture = getCurrentTexture();
+        if (count == 3)
+        {
+            gt3currentTexture = getCurrentTexture();
+            //if (count == 3)
+            //WaitForSeconds();
+            //callerself();
+            //printMessage ();
+            randomizeTextures();
+        }
+    }
+
+    void callerself(){
 		randomizeTextures ();
 	}
 
