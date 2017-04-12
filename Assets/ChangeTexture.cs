@@ -17,11 +17,22 @@ public class ChangeTexture : MonoBehaviour {
 	public static int count = 0;
 	private Texture gt1currentTexture, gt2currentTexture, gt3currentTexture;
 	private int randomNumber1, randomNumber2;
+    private string[] maxWin = { "000", "111", "222", "333", "444", "555", "001", "112", "223", "334", "445", "556", "121", "211","100","200","300","400","500","600" };
+    public int score = 0;
+    TextureHandling objTexture = new TextureHandling();
+    //public static bool win ;
+    public static int win = 0;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 		rend = GetComponent<Renderer>();
 	}
+
+    //ChangeTexture(TextureHandling tH) {
+
+    //    this.objTexture = tH;
+    //}
 
 	private void setCurrentTexture(Texture newTexture){
 		rend.material.mainTexture = newTexture;
@@ -35,25 +46,44 @@ public class ChangeTexture : MonoBehaviour {
 		print ("Box Clicked!" + countb);
         countb++;
         
-		//count++;
-		//isClick = true;
-		//currentTexture = rend.material.mainTexture;
-		////int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
-		////int randomNumber2 = 2; //Random.Range (0, temptexArray.Length - 2);
-		////int randomNumber3 = 1;
-		//if (count == 1)
-		//	gt1currentTexture = getCurrentTexture();
-		//if (count == 2)
-		//	gt2currentTexture = getCurrentTexture();
-		//if (count == 3) {
-		//	gt3currentTexture = getCurrentTexture();
-		//	//if (count == 3)
-		//	//WaitForSeconds();
-		//	//callerself();
-		//	//printMessage ();
-		//	randomizeTextures ();
-		//}
-	}
+        //objTexture.onChangeTexture();
+
+        //count++;
+        //isClick = true;
+        //currentTexture = rend.material.mainTexture;
+        ////int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
+        ////int randomNumber2 = 2; //Random.Range (0, temptexArray.Length - 2);
+        ////int randomNumber3 = 1;
+        //if (count == 1)
+        //	gt1currentTexture = getCurrentTexture();
+        //if (count == 2)
+        //	gt2currentTexture = getCurrentTexture();
+        //if (count == 3) {
+        //	gt3currentTexture = getCurrentTexture();
+        //	//if (count == 3)
+        //	//WaitForSeconds();
+        //	//callerself();
+        //	//printMessage ();
+        //	randomizeTextures ();
+        //}
+        print(WinCheck.currentCombination);
+        foreach (string str in maxWin)
+        {
+            if (str.Equals(WinCheck.currentCombination))
+            {
+                score = score + 100;
+                print(score);
+                win = 1;
+                break;
+            }
+          
+                win = 2;
+                //print("you Lost");
+            
+        }
+        
+    
+    }
 
     //private bool IsHand(Collider other)
     //{
@@ -65,31 +95,32 @@ public class ChangeTexture : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        //if (IsHand(other))
+        ////if (IsHand(other))
+        ////{
+        ////    Debug.Log("Yay! A hand collided!");
+        ////}
+        ////Debug.Log("Yay! A hand collided!");
+        //count++;
+        //Debug.Log("Yay! A hand collided!" + " " + count);
+        //isClick = true;
+        //currentTexture = rend.material.mainTexture;
+        ////int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
+        ////int randomNumber2 = 2; //Random.Range (0, temptexArray.Length - 2);
+        ////int randomNumber3 = 1;
+        //if (count == 1)
+        //    gt1currentTexture = getCurrentTexture();
+        //if (count == 2)
+        //    gt2currentTexture = getCurrentTexture();
+        //if (count == 3)
         //{
-        //    Debug.Log("Yay! A hand collided!");
-        //}
-        //Debug.Log("Yay! A hand collided!");
-        count++;
-        Debug.Log("Yay! A hand collided!" + " " + count);
-        isClick = true;
-        currentTexture = rend.material.mainTexture;
-        //int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
-        //int randomNumber2 = 2; //Random.Range (0, temptexArray.Length - 2);
-        //int randomNumber3 = 1;
-        if (count == 1)
-            gt1currentTexture = getCurrentTexture();
-        if (count == 2)
-            gt2currentTexture = getCurrentTexture();
-        if (count == 3)
-        {
-            gt3currentTexture = getCurrentTexture();
-            //if (count == 3)
-            //WaitForSeconds();
-            //callerself();
-            //printMessage ();
-            randomizeTextures();
-        }
+        //    gt3currentTexture = getCurrentTexture();
+        //    //if (count == 3)
+        //    //WaitForSeconds();
+        //    //callerself();
+        //    //printMessage ();
+        //    randomizeTextures();
+        // }
+        print(WinCheck.currentCombination);
     }
 
     void callerself(){

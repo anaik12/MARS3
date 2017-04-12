@@ -21,7 +21,7 @@ public class TextureHandling : MonoBehaviour {
 	//}
 
 	// Use this for initialization
-	void Start () {
+	 void Start () {
 		int randomNumber = Random.Range(0, texArray.Length-1); //Pick a random number between first index and last accessible index
         randInt = randomNumber;
         tHrandomTexture = texArray[randomNumber];
@@ -36,4 +36,16 @@ public class TextureHandling : MonoBehaviour {
 		rend.material.SetTexture (randomNumber, tHrandomTexture);
 		
 	}
+    public void onChangeTexture()
+    {
+        Debug.Log("In Change Texture");
+        //Debug.Log(texArray.Length - 1);
+        if (texArray == null) Debug.Log("TextArrayNull");
+        int randomNumber = Random.Range(0, texArray.Length - 1); //Pick a random number between first index and last accessible index
+        randInt = randomNumber;
+        tHrandomTexture = texArray[randomNumber];
+        rend.material.mainTexture = tHrandomTexture;
+
+
+    }
 }
