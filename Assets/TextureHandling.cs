@@ -10,7 +10,9 @@ public class TextureHandling : MonoBehaviour {
 	public Texture2D[] texArray;
 	public Renderer rend;
 	public Texture tHrandomTexture;
+    //changed from public static while accesing from Wincheck
 	public static int randomNumber;
+    public int randInt;
 	//public static Texture2D randomTexture;
 
 	//Texture randomizeTexture(){
@@ -21,7 +23,8 @@ public class TextureHandling : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		int randomNumber = Random.Range(0, texArray.Length-1); //Pick a random number between first index and last accessible index
-		tHrandomTexture = texArray[randomNumber];
+        randInt = randomNumber;
+        tHrandomTexture = texArray[randomNumber];
 		rend.material.mainTexture = tHrandomTexture;
 		
 	}

@@ -157,6 +157,7 @@
     <None Include="Assets\LeapMotion\Version.txt" />
     <None Include="Assets\LeapMotion\readme.txt" />
     <None Include="Assets\Plugins\donotdelete.txt" />
+    <None Include="Assets\stereoskopix3Dv026\Shader\stereo3DViewMethods.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

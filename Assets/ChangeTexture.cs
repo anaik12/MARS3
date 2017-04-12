@@ -30,9 +30,11 @@ public class ChangeTexture : MonoBehaviour {
 	public Texture getCurrentTexture(){
 		return rend.material.mainTexture;
 	}
-
-	void OnMouseDown () {
-		print ("Box Clicked!");
+    int countb = 0; 
+    void OnMouseDown () {
+		print ("Box Clicked!" + countb);
+        countb++;
+        
 		//count++;
 		//isClick = true;
 		//currentTexture = rend.material.mainTexture;
@@ -67,8 +69,9 @@ public class ChangeTexture : MonoBehaviour {
         //{
         //    Debug.Log("Yay! A hand collided!");
         //}
-        Debug.Log("Yay! A hand collided!");
+        //Debug.Log("Yay! A hand collided!");
         count++;
+        Debug.Log("Yay! A hand collided!" + " " + count);
         isClick = true;
         currentTexture = rend.material.mainTexture;
         //int randomNumber1 = 3; //Random.Range (0, temptexArray.Length - 1);
